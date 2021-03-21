@@ -1,19 +1,15 @@
-import { Request, Response, Router } from "express";
-import SurveysController from "./api/controllers/SurveysController";
-import UserController from "./api/controllers/UsersController";
+import { Router } from 'express'
+import SurveysController from './api/controllers/SurveysController'
+import UserController from './api/controllers/UsersController'
 
-const routes = Router();
-
-routes.get("/", (req: Request, res: Response) =>
-  res.json({ message: "Hello" })
-);
+const routes = Router()
 
 // Users
-routes.post("/users", UserController.create);
-routes.delete("/users/:email", UserController.remove);
+routes.post('/users', UserController.create)
+routes.delete('/users/:email', UserController.remove)
 
 // Surveys
-routes.get("/surveys", SurveysController.show);
-routes.post("/surveys", SurveysController.create);
+routes.get('/surveys', SurveysController.show)
+routes.post('/surveys', SurveysController.create)
 
-export default routes;
+export default routes

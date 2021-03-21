@@ -1,7 +1,7 @@
-import { Column, Entity, PrimaryColumn, CreateDateColumn } from "typeorm";
-import { v4 as uuid } from "uuid";
+import { Column, Entity, PrimaryColumn, CreateDateColumn } from 'typeorm'
+import { v4 as uuid } from 'uuid'
 
-@Entity("surveys")
+@Entity('surveys')
 class Surveys {
   @PrimaryColumn()
   readonly id: string;
@@ -15,11 +15,11 @@ class Surveys {
   @CreateDateColumn()
   created_at: Date;
 
-  constructor() {
+  constructor () {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuid()
     }
   }
 }
 
-export default Surveys;
+export default Surveys
