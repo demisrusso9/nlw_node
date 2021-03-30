@@ -3,6 +3,12 @@ import { getCustomRepository } from 'typeorm'
 import UsersRepository from '../repositories/UsersRepository'
 
 class UserController {
+  async show (req: Request, res: Response) {
+    const repository = getCustomRepository(UsersRepository)
+    const allusers = await repository.find()
+    return res.json(allusers)
+  }
+
   async create (req: Request, res: Response) {
     const repository = getCustomRepository(UsersRepository)
 
